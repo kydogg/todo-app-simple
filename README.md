@@ -30,7 +30,7 @@ Clone the repository and open the `index.html` file in a web browser to get star
 
 ```bash
 git clone https://github.com/yourusername/30-days-of-js.git
-cd 30-days-of-js/day-x-todo-list
+cd 30-days-of-js/thirty-days-js
 open index.html # Or double-click the file in your file explorer.
 ```
 
@@ -49,7 +49,7 @@ This project is part of a series of daily challenges that make up my 30 Days of 
 Contributors
 ------------
 
-- **Your Name** - Completed the challenge as part of learning web development basics.
+- **Kyle Baker* - Completed the challenge as part of learning web development basics.
 - **GreatStack** - Provided the initial tutorial that inspired this project. Check out their [YouTube channel](https://www.youtube.com/greatstack) for more amazing tutorials.
 
 Versioning
@@ -62,5 +62,3 @@ Acknowledgments
 
 - GreatStack for the comprehensive tutorials on web development.
 - All the open source contributors who make learning and building projects like this possible.
-
-Please replace `yourusername` with your actual GitHub username, and `Your Name` with your real name or GitHub handle. This README should be saved as `README.md` in the root directory of the day's challenge you are working on.
