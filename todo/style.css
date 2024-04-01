@@ -1,0 +1,137 @@
+/* Global Styles */
+/* Applies a baseline style to all elements, eliminating default browser padding and margins and setting a consistent box-sizing and font family */
+* {
+	margin: 0; /* Remove default margins */
+	padding: 0; /* Remove default padding */
+	font-family: "Poppins", sans-serif; /* Set a default font for all elements */
+	box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Container */
+/* Defines the main container style, setting it to full width, minimum full viewport height, a gradient background, and some padding */
+.container {
+	width: 100%; /* Full width */
+	min-height: 100vh; /* Minimum height of 100% of the viewport height */
+	background: linear-gradient(
+		135deg,
+		#153677,
+		#4e085f
+	); /* Gradient background from deep blue to deep purple */
+	padding: 10px; /* Padding around the content */
+}
+
+/* Todo App */
+/* Styles for the todo app container, including max width, background color, margin for auto centering, padding, and rounded corners */
+.todo-app {
+	width: 100%; /* Full width to fit its container */
+	max-width: 540px; /* Maximum width for the app */
+	background: #fff; /* White background for the app */
+	margin: 100px auto 20px; /* Top and bottom margin for spacing, auto for horizontal centering */
+	padding: 40px 30px 70px; /* Padding inside the app */
+	border-radius: 10px; /* Rounded corners */
+}
+
+/* Todo App Header */
+/* Styles for the todo app header, setting the color, layout, and spacing */
+.todo-app h2 {
+	color: #002765; /* Deep blue color for the text */
+	display: flex; /* Use flexbox for layout */
+	align-items: center; /* Vertically center the items in the flex container */
+	margin-bottom: 20px; /* Bottom margin for spacing below the header */
+}
+
+/* Todo App Header Image */
+/* Specific styles for images within the todo app header, setting the size and spacing */
+.todo-app h2 img {
+	width: 30px; /* Set a fixed width for the image */
+	margin-left: 10px; /* Left margin for spacing from the preceding text */
+}
+
+/* Row */
+/* General row style used within the app, for layout, background, padding, and spacing */
+.row {
+	display: flex; /* Use flexbox for layout */
+	align-items: center; /* Vertically center the items in the flex container */
+	justify-content: space-between; /* Distribute items evenly, with the first item at the start and the last item at the end */
+	background: #edeef0; /* Light grey background */
+	padding-left: 20px; /* Left padding */
+	margin-bottom: 25px; /* Bottom margin for spacing below the row */
+}
+
+/* Input */
+/* Styles for input elements, focusing on removing default borders, outline, and setting flexible width and font size */
+input {
+	flex: 1; /* Take up the remaining space in the flex container */
+	border: none; /* Remove default border */
+	outline: none; /* Remove default focus outline */
+	background: transparent; /* Transparent background */
+	font-size: 14px; /* Set font size */
+	padding: 10px;
+	font-weight: 14px;
+}
+
+/* Button */
+/* General button styles, removing default border and outline, and setting padding */
+button {
+	border: none; /* Remove default border */
+	outline: none; /* Remove default focus outline */
+	padding: 16px 50px; /* Set padding for the button */
+	background: #ff5945;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 40px;
+}
+
+/* List Item Styles */
+/* Styles for list items, including typography, padding, interaction cues, and custom unchecked/checked appearances */
+ul li {
+	list-style: none; /* Remove default list item styling */
+	font-size: 17px; /* Font size for readability */
+	padding: 12px 8px 12px 50px; /* Padding for text alignment and spacing, accounting for custom checkbox */
+	user-select: none; /* Disables text selection for better UI interaction */
+	cursor: pointer; /* Cursor style to indicate clickable items */
+}
+
+/* Custom Checkbox - Unchecked */
+/* Custom styling for the unchecked state of the list items, using a background image */
+ul li::before {
+	content: ""; /* Necessary for pseudo-elements to render */
+	position: absolute; /* Position relative to the list item */
+	height: 28px; /* Height of the custom checkbox */
+	width: 28px; /* Width of the custom checkbox */
+	border-radius: 50%; /* Rounded corners for a circular checkbox */
+	background-image: url(images/unchecked.png); /* Custom unchecked image */
+	background-size: cover; /* Ensure the image covers the entire pseudo-element */
+	top: 12px; /* Positioning from the top of the list item */
+	left: 8px; /* Positioning from the left of the list item */
+}
+
+/* List Item Checked Styles */
+/* Styles for list items when they are marked as completed */
+ul li.checked {
+	color: #555;
+	text-decoration: line-through;
+}
+
+/* Custom Checkbox - Checked */
+/* Custom styling for the checked state of list items, using a different background image */
+ul li.checked ::before {
+	background-image: url(images/checked.png); /* checked image for completed tasks */
+}
+
+ul li span {
+	position: absolute;
+	right: 0;
+	top: 5px;
+	width: 40px;
+	height: 40px;
+	font-size: 22px;
+	color: #555;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 50%;
+}
+
+ul li span:hover {
+	background: ;
+}
