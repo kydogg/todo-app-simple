@@ -1,137 +1,161 @@
 /* Global Styles */
-/* Applies a baseline style to all elements, eliminating default browser padding and margins and setting a consistent box-sizing and font family */
 * {
 	margin: 0; /* Remove default margins */
-	padding: 0; /* Remove default padding */
+	padding: 0; /* Removes default padding */
 	font-family: "Poppins", sans-serif; /* Set a default font for all elements */
 	box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 /* Container */
-/* Defines the main container style, setting it to full width, minimum full viewport height, a gradient background, and some padding */
+/* Updated with a fresh TaskTune look and maintained the original gradient from the source for consistency */
+/* Container */
+/* Updated with a cohesive TaskTune green color scheme gradient */
 .container {
-	width: 100%; /* Full width */
-	min-height: 100vh; /* Minimum height of 100% of the viewport height */
+	width: 100%;
+	min-height: 100vh;
+	padding: 5px; /* Maintained reduced padding for a sleeker look */
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background: linear-gradient(
-		135deg,
-		#153677,
-		#4e085f
-	); /* Gradient background from deep blue to deep purple */
-	padding: 10px; /* Padding around the content */
+		to right,
+		#35b779,
+		/* task-trek-green for a fresh start */ #3caea3
+			/* light-sea-green for a vibrant end */
+	); /* A smooth transition between two shades of TaskTune green */
 }
 
 /* Todo App */
-/* Styles for the todo app container, including max width, background color, margin for auto centering, padding, and rounded corners */
+/* Combined styles from both sources to maintain functionality and preferred aesthetics */
 .todo-app {
-	width: 100%; /* Full width to fit its container */
-	max-width: 540px; /* Maximum width for the app */
-	background: #fff; /* White background for the app */
-	margin: 100px auto 20px; /* Top and bottom margin for spacing, auto for horizontal centering */
-	padding: 40px 30px 70px; /* Padding inside the app */
-	border-radius: 10px; /* Rounded corners */
+	width: calc(
+		100% - 10px
+	); /* Account for padding, aligning with the second style preference */
+	max-width: 540px;
+	background: #fff; /* Pure white background for cleanliness */
+	margin: 20px auto; /* Vertical margin reduced as per the second style */
+	padding: 30px; /* Unified padding for a modern feel */
+	border-radius: 8px; /* Softer border-radius */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
 }
 
 /* Todo App Header */
-/* Styles for the todo app header, setting the color, layout, and spacing */
+/* Used deep-indigo color from the second style for the header */
 .todo-app h2 {
-	color: #002765; /* Deep blue color for the text */
-	display: flex; /* Use flexbox for layout */
-	align-items: center; /* Vertically center the items in the flex container */
-	margin-bottom: 20px; /* Bottom margin for spacing below the header */
+	color: #443983; /* deep-indigo for a TaskTune look */
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
 }
 
 /* Todo App Header Image */
-/* Specific styles for images within the todo app header, setting the size and spacing */
 .todo-app h2 img {
-	width: 30px; /* Set a fixed width for the image */
-	margin-left: 10px; /* Left margin for spacing from the preceding text */
+	width: 20px; /* Slightly smaller icon for subtlety */
+	margin-left: 10px;
 }
 
 /* Row */
-/* General row style used within the app, for layout, background, padding, and spacing */
+/* Combined styles from both sources, with preference for the second source's lighter color and padding */
 .row {
-	display: flex; /* Use flexbox for layout */
-	align-items: center; /* Vertically center the items in the flex container */
-	justify-content: space-between; /* Distribute items evenly, with the first item at the start and the last item at the end */
-	background: #edeef0; /* Light grey background */
-	padding-left: 20px; /* Left padding */
-	margin-bottom: 25px; /* Bottom margin for spacing below the row */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: #e4e9f0; /* Lighter background for the row as per the second style */
+	border-radius: 30px; /* Maintained rounded corners from the source */
+	padding: 15px; /* Consistent padding from the second style */
+	margin-bottom: 20px;
 }
 
 /* Input */
-/* Styles for input elements, focusing on removing default borders, outline, and setting flexible width and font size */
+/* Styles merged, prioritizing functionality with aesthetics */
 input {
-	flex: 1; /* Take up the remaining space in the flex container */
-	border: none; /* Remove default border */
-	outline: none; /* Remove default focus outline */
-	background: transparent; /* Transparent background */
-	font-size: 14px; /* Set font size */
+	flex: 1;
+	border: none;
+	outline: none;
+	background: transparent;
 	padding: 10px;
-	font-weight: 14px;
+	font-size: 14px;
 }
 
-/* Button */
-/* General button styles, removing default border and outline, and setting padding */
+/* Todo App Submit Item Button */
+/* Maintained the look from the second style with TaskTune color scheme */
 button {
-	border: none; /* Remove default border */
-	outline: none; /* Remove default focus outline */
-	padding: 16px 50px; /* Set padding for the button */
-	background: #ff5945;
-	font-size: 16px;
+	border: none;
+	outline: none;
+	padding: 12px 30px;
+	background: #35b779; /* task-trek-green for a TaskTune vibe */
+	font-size: 14px;
+	color: #fff; /* Text color white for contrast */
 	cursor: pointer;
-	border-radius: 40px;
+	border-radius: 40px; /* Rounded corners as per the source */
+	transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Button Hover State */
+button:hover {
+	background: #3caea3; /* light-sea-green for hover state */
 }
 
 /* List Item Styles */
-/* Styles for list items, including typography, padding, interaction cues, and custom unchecked/checked appearances */
+/* Combined styles to ensure functionality with updated TaskTune aesthetic */
 ul li {
-	list-style: none; /* Remove default list item styling */
-	font-size: 17px; /* Font size for readability */
-	padding: 12px 8px 12px 50px; /* Padding for text alignment and spacing, accounting for custom checkbox */
-	user-select: none; /* Disables text selection for better UI interaction */
-	cursor: pointer; /* Cursor style to indicate clickable items */
+	list-style: none;
+	font-size: 17px; /* Font size from source */
+	padding: 12px 8px 12px 50px; /* Padding from source to accommodate checkbox */
+	user-select: none;
+	cursor: pointer;
+	position: relative; /* Necessary for absolute positioning of children */
+	transition: background-color 0.3s, color 0.3s; /* Smooth transitions for hover states */
 }
 
 /* Custom Checkbox - Unchecked */
-/* Custom styling for the unchecked state of the list items, using a background image */
+/* Maintained source styling for checkbox functionality */
 ul li::before {
-	content: ""; /* Necessary for pseudo-elements to render */
-	position: absolute; /* Position relative to the list item */
-	height: 28px; /* Height of the custom checkbox */
-	width: 28px; /* Width of the custom checkbox */
-	border-radius: 50%; /* Rounded corners for a circular checkbox */
-	background-image: url(images/unchecked.png); /* Custom unchecked image */
-	background-size: cover; /* Ensure the image covers the entire pseudo-element */
-	top: 12px; /* Positioning from the top of the list item */
-	left: 8px; /* Positioning from the left of the list item */
-}
-
-/* List Item Checked Styles */
-/* Styles for list items when they are marked as completed */
-ul li.checked {
-	color: #555;
-	text-decoration: line-through;
+	content: "";
+	position: absolute;
+	height: 28px;
+	width: 28px;
+	border-radius: 50%;
+	background-image: url(images/unchecked.png); /* Checkbox image from source */
+	background-size: cover;
+	background-position: center;
+	top: 12px;
+	left: 8px;
 }
 
 /* Custom Checkbox - Checked */
-/* Custom styling for the checked state of list items, using a different background image */
-ul li.checked ::before {
-	background-image: url(images/checked.png); /* checked image for completed tasks */
+/* Updated the checked state with a TaskTune theme */
+ul li.checked {
+	color: #555; /* Muted color for checked items from source */
+	text-decoration: line-through; /* Strike through completed tasks */
 }
 
+ul li.checked::before {
+	background-image: url(images/checked.png); /* Checked checkbox image from source */
+}
+
+/* Right Positioned Span for Delete Option or Additional Action */
+/* Updated delete button with second source aesthetics */
 ul li span {
 	position: absolute;
-	right: 0;
-	top: 5px;
-	width: 40px;
-	height: 40px;
-	font-size: 22px;
-	color: #555;
-	line-height: 40px;
-	text-align: center;
-	border-radius: 50%;
+	right: 10px; /* Properly aligned within the task item */
+	top: 50%; /* Vertically centered */
+	transform: translateY(-50%); /* Adjusted to vertically center */
+	width: 24px; /* Size from the second source */
+	height: 24px;
+	font-size: 18px; /* Size from the second source */
+	line-height: 24px; /* Centered text line height */
+	color: #ffffff; /* Color for visibility */
+	background-color: #3caea3; /* Background from the TaskTune theme */
+	border-radius: 50%; /* Rounded corners for aesthetics */
+	cursor: pointer; /* Indicates the element is clickable */
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
+/* Hover State for Span */
 ul li span:hover {
-	background: ;
+	background-color: #ff9671; /* Lighter background for the hover state */
 }
