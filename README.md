@@ -1,6 +1,7 @@
 30 Days of JavaScript: To-Do List App
 -----------------------------------------
-![Cover Image](/images/cover.png)
+![Cover Image](/todo/images/cover.png)
+
 
 Welcome to my 30 Days of JavaScript challenge! This To-Do List Project is part of my journey as I learn the basics of HTML, CSS, and JavaScript. It's designed to be a hands-on project to apply the concepts learned during the tutorials.
 
