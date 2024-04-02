@@ -1,23 +1,66 @@
-// JavaScript for Adding Tasks in a Todo List Application
+const inputBox = document.getElementById("input-box");
+const listContainer = document.getElementById("list-container");
 
-// Grabbing HTML elements for interaction
-const inputBox = document.getElementById("input-box"); // Input box where users enter new tasks
-const listContainer = document.getElementById("list-container"); // Container where new tasks will be listed
+// Function to save the list to local storage
+function saveData() {
+	localStorage.setItem("data", listContainer.innerHTML);
+}
+
+// Function to display tasks from local storage
+function showTask() {
+	listContainer.innerHTML = localStorage.getItem("data") || "";
+	// Re-attach event listeners for delete buttons and check marks after tasks are shown
+	document.querySelectorAll("li").forEach((item) => {
+		item.querySelector("span").addEventListener("click", function () {
+			this.parentElement.remove();
+			saveData();
+		});
+		item.addEventListener("click", function () {
+			this.classList.toggle("checked");
+			saveData();
+		});
+	});
+}
 
 // Function to add a new task
 function addTask() {
-	// Check if the input box is empty
 	if (inputBox.value.trim() === "") {
-		// The .trim() method removes whitespace from both ends of a string
-		alert("Please write something"); // Alert the user to enter a task if the input box is empty
+		alert("You must write something!");
 	} else {
-		let listItem = document.createElement("li"); // Create a new list item (<li>) element for the task
-		listItem.innerHTML = inputBox.value; // Set the content of the list item to the input value
-		listContainer.appendChild(listItem); // Add the new list item to the list container
-		let span = document.createElement("span");
-		span.innerHTML = "\u00d7";
-		listItem.appendChild(span);
-	}
+		let li = document.createElement("li");
+		li.textContent = inputBox.value; // It's safer to use textContent to prevent HTML injection
+		listContainer.appendChild(li);
 
-	inputBox.value = "";
+		let span = document.createElement("span");
+		span.textContent = "\u00D7";
+		span.className = "delete"; // Use class for styling and targeting
+		li.appendChild(span);
+
+		// Add event listeners to new elements
+		span.addEventListener("click", function () {
+			this.parentElement.remove();
+			saveData();
+		});
+
+		li.addEventListener("click", function () {
+			this.classList.toggle("checked");
+			saveData();
+		});
+
+		inputBox.value = ""; // Clear the input box after adding the task
+		saveData(); // Save the updated list to local storage
+	}
 }
+
+// Event listener for adding a task when the Enter key is pressed
+inputBox.addEventListener("keypress", function (e) {
+	if (e.key === "Enter") {
+		addTask();
+	}
+});
+
+// Show tasks when the application is loaded
+showTask();
+
+// Add new task on button click
+document.getElementById("add-btn").addEventListener("click", addTask);
